@@ -27,7 +27,6 @@ class Openfpgaloader < Formula
     sha256 "7f15ac39f8d079ebe8e73a763bbb4e3d7b441f74df1d5586dbe15af967d5fc33"
   end
 
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
