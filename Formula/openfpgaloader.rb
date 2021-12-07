@@ -21,13 +21,6 @@ class Openfpgaloader < Formula
   depends_on "libusb"
   uses_from_macos "zlib"
 
-  # Fix incorrect version
-  # https://github.com/trabucayre/openFPGALoader/pull/144
-  patch do
-    url "https://github.com/trabucayre/openFPGALoader/commit/efeb0d83c479200e359407245f82000ee4f33558.patch?full_index=1"
-    sha256 "7f15ac39f8d079ebe8e73a763bbb4e3d7b441f74df1d5586dbe15af967d5fc33"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
